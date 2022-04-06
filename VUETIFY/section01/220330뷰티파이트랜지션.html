@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <v-app>
+            <v-btn @click="fade=!fade">Fade</v-btn>
+            <v-fade-transition>
+                <h1 v-show="fade">fade</h1>
+            </v-fade-transition>
+
+            
+            <v-slide-x-transition>
+                <h1 v-show="slide">slide</h1>
+            </v-slide-x-transition>
+
+            <v-btn @click="num+=1">slide</v-btn>
+                <v-list>
+                <!-- 트랜지션은 한개의 요소에다가 적용이 되고,
+                여러개에 적용할 때는 group 속성 사용 -->
+                    <v-fade-x-transition group>
+                        <!-- 반드시 ket값을 작성해야 트랜지션 적용 -->
+                        <v-list-item v-for="n in num" :key="n">
+                            <v-list-item-content>
+                                <v-list-item-title>아이템 추가{{n}}</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-fade-x-transition>
+                </v-list>            
+
+        </v-app>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app',
+            vuetify:new Vuetify(),
+            data:{
+                fade:false,
+                slide:false,
+                n:0
+            }
+        })
+    </script>
+</body>
+</html>

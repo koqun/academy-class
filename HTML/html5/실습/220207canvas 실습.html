@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas 실습</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="350" 
+    style="border: 2px solid brown;"></canvas>
+
+    <script>
+        let paper=document.getElementById("myCanvas");
+        let context=paper.getContext("2d");
+
+        context.fillStyle="pink"
+        context.fillRect(10,10,250,125);
+        context.stroke();
+
+        let grd=context.createRadialGradient(10,10,100,100,50,50);
+        grd.addColorStop(0,"blue");
+        grd.addColorStop(1,"white");
+
+        context.fillStyle=grd;
+        context.fillRect(10,10,250,125);
+
+        console.log(paper);
+    </script>
+</body>
+</html>
+
+context.strokeStyle=grd;
+context.rect(0,250,125,20);
+context.stroke();

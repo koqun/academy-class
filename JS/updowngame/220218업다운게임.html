@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <h1>업&다운 게임</h1>
+    <p>설명</p>
+    <p>
+        먼저 컴퓨터가 랜덤한 수를 정한다.<br>
+        사용자는 input text안에서 숫자를 넣는다.<br>
+        input의 button을 이용해서 값을 받아온다.<br>
+        document.getElementById("")을 사용하여 input값 가져온다.<br>
+        <b>이 값을 랜덤한 수와 비교해서 큰지 작은지 알려준다.</b><br>
+        랜덤한 수를 맞출때까지 <b>반복</b>
+    </p>
+    <p>
+        body 아래 script 태그에 사용자가 적을 변수값(임의)과<br>
+        랜덤값(Math.random*100)을 넣어 if문 만들기<br>
+        *doc.wr();로 출력
+    </p>
+    <p>
+        프롬프트로 값을 받아서 랜덤값을 맞출때까지 반복하기<br>
+        *주의 :프롬프트 설명란에 작성한 수가 큰지 작은지 알려주기
+    </p>
+    
+    <script>
+        let random =Math.random()*100;
+        random =parseInt(random);
+        
+        let count =0;
+        let result =0;
+        while(result !=random){
+                result =prompt("뭐게");
+                count++;
+            if(result >random){
+                result =alert("낮춰");
+            }
+            else if(result <random){
+                result =alert("올려");
+            }
+        }
+        alert(`정답! ${count}회 만에 맞췄습니다.`);
+
+
+        
+        /*
+        //강사풀이
+        //while문과 break문을 사용하여 프롬프트 값을 이용하여 게임진행
+        let random =Math.random*100 //0~99
+        random =ParseInt(random) //정수값만, 소수값 제거
+        let user =40; //프롬프트 입력
+
+        while(true){
+            if(random >user){
+                //if와 elif 각기 다른 설명을 넣어준다.ex)올려, 내려, 정답
+                user =prompt("random값이 더 큼");
+            }
+            else if(random <user){
+                //if와 elif 각기 다른 설명을 넣어준다.ex)올려, 내려, 정답
+                user =prompt("random값이 더 작음");
+            }
+            else if(random ==user){
+                user =prompt("random값 정답");
+                break;
+            }
+        }
+        */
+    </script>
+</body>
+</html>

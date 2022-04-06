@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function printCenter(string){
+            if(string.length%2==1){
+                //문자열의 길이가 홀수일때만 작동
+                let centerIndex =Math.floor(string.length/2);
+                //let centerIndex =string.length/2
+                //centerIndex =Math.floor(centerIndex)
+                return string. chartAt(centerIndex);
+            }
+            else{
+                //문자열의 길이가 짝수일때 따로 만듬.
+                let centerIndex =Math.floor(string.length/2);
+                //두 수중에 마지막 자리의 위치를 알아냄
+                //첫번째 자리의 위치는 1을 빼면 된다.
+                //두개의 위치로 문자열을 가져오는 메서드 string.slice(n,m)
+                return string.slice(centerIndex-1, centerIndex+1);
+            }
+        }
+
+        //넌센스 quiz 만들기
+
+        let randomQuiz(quizArray,count)={
+            {quiz:"왕이 넘어지면", answer:"킹콩"},
+            {quiz:"오리가 얼면", answer:"언덕"},
+            {quiz:"한국의 수도는", answer:"서울"},
+            {quiz:"5+9", answer:"14"},
+        
+        let score =0;
+        let randomNum =0;
+
+        for(let i=0; i<=count; i++){
+            randomNum =Math.floor(Math.random()*quizArray.length);
+            let answer =prompt (quizArray[randomNum].quiz);
+            if(answer ==quizArray[randomNum].answer){
+                score++;
+            }
+        }
+        return `${count}개 중에서 ${score}개 맞췄습니다`;
+    }
+    </script>
+</body>
+</html>

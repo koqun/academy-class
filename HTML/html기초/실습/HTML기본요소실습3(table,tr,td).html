@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML 기본요소 실습3</title>
+        <style>
+            table,th,tr,td{border: 1px solid black;}
+        </style>
+    </head>
+    <body>
+        <h1>학생명단입니다</h1>
+        <table>
+            <tr>
+                <th colspan="3">A반</th>
+            </tr>
+            
+            <tr>
+                <td>에밀리</td>
+                <td>토비</td>
+                <td>제임스</td>
+            </tr>
+
+            <tr>
+                <td>16</td>
+                <td>14</td>
+                <td>10</td>
+            </tr>
+        </table>
+
+        <table>
+            <tr style="background-color: orange;">
+                <th>반</th>
+                <th colspan="3">A반</th>
+            </tr>
+
+            <tr style="background-color:peachpuff;">
+                <th rowspan="2">뭐였지</th>
+                <td>에밀리</td>
+                <td>토비</td>
+                <td>제임스</td>
+            </tr>
+
+            <tr style="background-color:peachpuff;">
+                <td>16</td>
+                <td>14</td>
+                <td>10</td>
+            </tr>
+        </table>
+    </body>
+</html>

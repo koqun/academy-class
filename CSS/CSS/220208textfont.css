@@ -1,0 +1,33 @@
+.text{
+    direction: rtl;
+    letter-spacing: 5px;
+    word-spacing: 5px;
+    text-align: center;
+    text-decoration: underline dashed;
+    text-shadow: 2px 1px coral;
+}
+/*
+ltr:left to right 왼쪽에서 오른쪽으로 글 작성(기본값)
+rtl:right to left 오른쪽에서 왼쪽으로 글 작성
+*/
+.text_p{
+    text-indent: 10px;
+    line-height: 40px;
+}
+.font_h3{
+    font-family: "휴먼둥근헤드라인";
+    font-size: larger;
+}
+
+.font{
+    font-family: "바탕";
+    font-size: smaller;
+}
+
+.web_font{
+    font-family: 'Jua';
+    font-size: 30px;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-style: oblique;
+}

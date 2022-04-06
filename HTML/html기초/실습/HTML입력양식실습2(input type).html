@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>설문조사</h1>
+
+    <p>성별을 체크해주세요</p>
+    <input type="radio">남
+    <input type="radio">여<br>
+
+    <p>음식을 선택해주세요</p>
+    <input type="checkbox"> 한식<br>
+    <input type="checkbox"> 일식<br>
+    <input type="checkbox"> 중식<br>
+    <input type="checkbox"> 양식<br>
+
+    <p>기타의견을 남겨주세요</p>
+    <textarea name="" id="" cols="40" rows="10"></textarea>
+
+    <!--연습-->
+    <form>
+        <h1>설문조사</h1>
+        <p>성별을 체크해주세요</p>
+        <input type="radio" name="gender" value="남">남
+        <input type="radio" name="gender" value="여">여
+        <!--name을 묶어줘야 동시체크 되지않음-->
+        <!--checked 입력시 체크된 상태로 켜짐-->
+        <!--disabled 입력시 체크 비활성화됨-->
+        <p>음식을 선택해주세요</p>
+        <input type="checkbox" name="food" value="한식">한식<br>
+        <input type="checkbox" name="food" value="일식">일식<br>
+        <input type="checkbox" name="food" value="중식">중식<br>
+        <input type="checkbox" name="food" value="양식">양식<br>
+
+        <p>기타의견을 남겨주세요</p>
+        <textarea cols="100" rows="10">의견을 남겨주세요</textarea>
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+.dic_link{
+    border: 3px solid brown;
+}
+
+p.button{
+    border: 1px solid blue;
+    background-color: blue;
+    color: white;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.color{
+    border: 3px solid orange;
+}
+
+.hash> ul li{
+    float: right;
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 0 10px;
+}

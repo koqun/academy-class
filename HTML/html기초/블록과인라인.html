@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <h3>style display가 블록인 경우</h3>
+            <p style="border: 3px solid black;">
+            p태그에 스타일을 걸면 화면끝까지 색이 입혀집니다.</p>
+        
+        <div style="border: 2px solid blue;
+        color:darkorange;
+        font-weight: bold;">
+            <p>div만의 태그입니다</p>
+            <ul>
+                <li>리스트입니다</li>
+                <li>리스트입니다</li>
+                <li>리스트입니다</li>
+            </ul>
+            <!--ul=정렬없는 리스트-->
+        </div>
+        <!--div 는 division 의 영문 약자로 경계를 
+            분활 하다 또는 영역을 나누다 라는 뜻-->
+
+        <ol>
+            <li>div밖의 리스트입니다</li>
+        </ol>
+
+        <h3>style display가 인라인인 경우</h3>
+        <p style="display: inline; border: 3px solid black;">
+            강제로 인라인으로 바꾸기</p>
+            <!--display: inline;=아웃라인을 강제로 인라인으로 변경-->
+            <img src="../img/naver.png" alt="네이버로고" style="border: 3px solid purple; display: block;">
+            <!--src=source의 약어-->
+            <!--block 활용법 숙지시 css 다룰때 편하다함-->
+        
+        <a href="5HTML 기본요소 실습2.html" style="border: 3px dashed red;">html 실습내용</a>
+        <!--dashed=점선표시-->
+        <p>
+            인라인인경우 자동 줄바꿈이 되지않습니다.<br>
+            요소의 컨텐츠의 크기만큼 공간을 차지하고 있기 때문<br>
+            style의 display값을 block으로 바꿔주면 새로운 줄에서 시작하고 한줄을 다 차지한다.
+        </p>
+        <!--?-->
+        <h3>iframe을 이용한 페이지 삽입</h3>
+        <iframe src="2텍스트 확인.html" name="show" style="width: 100%;height: 800px;"></iframe>
+        <a href="../html기초/실습/HTML텍스트요소실습1(blockquote).html" target="show">페이지를 이동합니다</a>
+        <!--타겟을 show로 함으로써 iframe에 들어갈 내용을 해당 href 자료로 바꿔표시-->
+        <a href="2텍스트 확인.html" target="show">원래 페이지로 이동합니다</a>
+        <!--href=하이퍼 텍스트 레퍼런스-->
+    </body>
+</html>

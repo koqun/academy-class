@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .active{color: blue;}
+        .active_red{color: red;}
+        .active_bg{background-color: black;}
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- 
+            객체 형식을 사용하면 
+            v-bind:class={class이름:boolean값} 
+            으로 참일때 클래스가 실행이 된다
+            boolean 값은 data객체의 속성이 들어가도 되고
+            true/false값이 들어갈수도 있다.
+        -->
+        <h1 v-bind:class="{active:true}">class 바인드 확인</h1>
+
+        <!--
+            v-bind:class="data 속성명"을 적어주게 되면
+            data 안에 있는 값을 찾아서 class에 등록
+        -->
+        <p v-bind:class="ActiveClass">data의 객체값으로 class 연결</p>
+
+        <!-- ActiveClass 값 찾은 후 '_red'를 더해서 ActiveClass_red의 클래스로 변형 -->
+        <p v-bind:class="ActiveClass+'_red'">data의 객체값으로 class 연결</p>
+
+        <!-- ''를 이용하여 클래스 이름을 바로 등록 -->
+        <p v-bind:class="'active'">data의 객체값으로 class 연결</p>
+
+        <!-- 배열을 작성하면 data에 입력된 값을 들고와서 클래스 등록 -->
+        <p v-bind:class="['active_red', ActiveBGClass]">배열을 이용하여 여러개의 클래스 연결</p>
+
+        <!-- 배열 안에서 객체를 이용하여 등록할지 안할지 boolean 설정가능 -->
+        <p v-bind:class="[{'active' : true}, ActiveBGClass]">배열을 이용하여 여러개의 클래스 연결</p>
+
+        <!--
+            객체형식을 이용하면
+            v-bind:style="{스타일명:데이터속성/'문자열값'}"
+            의 형식으로 스타일 값을 넣어줄수있다
+        -->
+        <h1 v-bind:style="{color:activeColor}">style 바인드</h1>
+        <h1 v-bind:style="{color:'orange'}">style 바인드</h1>
+
+        <h1 v-bind:style="baseStyle">data에 미리 적어둔 style 셋</h1>
+        <h1 v-bind:style="[baseStyle, fontStyle]">data에 미리 적어둔 style 셋</h1>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                isActive:true,
+                ActiveClass:"active",
+                ActiveBGClass:"active_bg",
+                activeColor:"yellow",
+                baseStyle:{
+                    color:"red",
+                    fontSize:"20px",
+                    'background-color':"#555"
+                },
+                fontStyle:{
+                    'font-weight':'bold'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

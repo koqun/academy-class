@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            //Print(text)>document.write();
+    //인수 1개를 h3h3넣어서 doc.wr()로 출력하는 함수
+    function Print(text){
+        document.write(`<h3>${text}</h3>`);
+    }
+    //두개의 인수를 받아와서 두수의 곱을 return하는 함수
+    function Multi(a,b){
+        let num =a*b;
+        return num;
+    }
+    //배열이 들어오면 배열안에 있는 값을 출력하는 함수
+    function Show(array){
+        for(i of array){
+            document.write(`${i}`);
+        }
+    }
+    </script>
+</head>
+<body>
+
+
+    <script>
+        Print(123);
+        Print("문자");
+        let word ="변수에 들어간 문자";
+        Print(word);
+    
+        /*
+    //Multi(a, b)
+    //인수 2개를 받아와서 두 수의 곱을 return하는 함수
+    function Multi(a,b){
+        
+        
+    }
+    
+
+    //Show(array)
+    //배열을 인수로 받아서 배열 안에 있는 값을 화면에 출력하는 함수
+    //함수는 호출하여서 확인하시면 됩니다
+    function Show(array){//num :매개변수로 사용
+            document.write(`<p>${array}</p>`);
+        }
+        function (array){//num :매개변수로 사용
+            let array =[1,2,3,4];
+            let arrayShow =new Array();
+            arrayShow[0] =1;
+        }
+
+        */
+
+    </script>
+</body>
+</html>

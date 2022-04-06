@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //new Object()함수를 이용한 객체의 생성 실습 1
+        let myBook =new Object();
+        myBook.title ="어린왕자";
+        myBook.price ="6000";
+        myBook.intro =function(){
+            return `${this.title}입니다. ${this.price}입니다.`
+        }
+        myBook.discount =function(){
+            return `${this.price*0.9}`
+        }
+
+        //강사풀이
+        /*let myBook =new Object();
+        myBook2.title ="어린왕자";
+        myBook2.price ="6000";
+        myBook2.intro =function(){
+            return this.title+"입니다."+this.price+"입니다";
+        }
+        myBook.discount =function(){
+            let dis_10p =this.price*0.1;//원래가격의 10% 금액
+            this.price =this.price-dis_10p;//원래가격에서 10%를 뺀 금액이 다시 할당
+        }*/
+
+
+        //new Object()함수를 이용한 객체의 생성 실습 2
+        /*let myWallet =new Object();
+        myWallet.owner ="홍길동";
+        myWallet.money ="10000";
+        myWallet.show =function(){
+            return "현재 "+this.money+"남았습니다";
+        }
+        myWallet.buy =function(price){
+            //물건금액(매개변수)을 받아와서 money에 빼기
+            return this.money-price;
+        }*/
+        
+
+        //강사풀이
+        let myWallet =new Object();
+        myWallet.owner ="홍길동";
+        myWallet.money ="10000";
+        myWallet.show =function(){
+            return "현재 "+this.money+"원이 남았습니다";
+        }
+        myWallet.buy =function(pay){//물건금액(매개변수)를 받아와서 money에 빼기
+            console.log(pay);//매개변수 확인
+            //pay가 money보다 크면 물건을 살수없다 문자열 리턴
+            //아니면 남은 금액저장
+            if(pay>this.money){
+                return "잔액부족";
+            }
+            else{
+                this.money =this.money-pay;//남은금액저장 this.money -=pay;
+                return this.money
+            }
+        }
+        let yourWallet =myWallet;
+        yourWallet.owner ="성춘향";
+        console.log(myWallet.owner);
+        console.log(yourWallet.owner);
+        console.log(myWallet.show());
+        console.log(yourWallet.show());
+
+    </script>
+</body>
+</html>

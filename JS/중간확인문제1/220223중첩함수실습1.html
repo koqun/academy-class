@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //주석아래 들어갈 코드(문장)을 작성하세요.
+        //함수호출 :add(5,6);
+        function add(a,b){
+            let sum =a+b;
+            function printNum(){
+                //document.write를 이용하여 sum 출력
+                document.write("<p>"+sum+"<p>");
+            }
+            printNum();
+        }
+
+        //강사풀이
+        function add2(a,b){
+            let sum2 =a+b;
+            function printNum2(){
+                document.write(`합:${sum2}`);
+            }
+            printNum2();
+        }
+        
+        //카운트
+        let globalCount =0;
+        function CountG(){
+            globalCount++; //globalCount +=1
+        }
+
+        //클로저 함수
+        function CountL(){
+            let localCount =0;//이함수를 전역변수처럼 사용
+            return function(){//return을 통해 익명함수를 되돌려줌
+                return localCount +=1;
+            }
+        };
+
+        /*
+        let countTest =CountL();
+        alert(countTest());
+        alert(countTest());
+        alert(countTest());
+        */
+
+        //람다형식
+        let lamda =(function() {return "람다형식입니다";})();
+
+        //책 134p의 클로저 함수 > 람다형식 이용
+        let count =(function(){
+            let localCount =0;//이 함수를 전역 변수처럼 사용
+            return function(){//return을 통해 익명함수를 되돌려줌
+                return localCount +=1;
+            };
+        })();
+    </script>
+</body>
+</html>

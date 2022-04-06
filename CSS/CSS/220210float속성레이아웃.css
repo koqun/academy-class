@@ -1,0 +1,49 @@
+h2{
+    text-align: center;
+}
+
+header{
+    border: 3px solid red;
+}
+
+nav{
+    border: 3px solid orange;
+    width: 200px;
+    float: left;
+}
+
+section{
+    border: 3px solid yellow;
+    margin-left: 206px;
+}
+
+footer{
+    border: 3px solid green;
+}
+
+.page{
+    border: 3px solid blue;
+}
+
+body{
+    margin: 0px;
+}
+
+.color_box{
+    border: 3px solid black;
+    background-color: palevioletred;
+    width: 200px;
+}
+
+.margin{
+    margin: auto;
+}
+
+.position{
+    position: absolute;
+    right: 0;
+}
+
+.float{
+    float: left;
+}

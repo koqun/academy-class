@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //아무것도 상속받지 않으면 object 객체를 prototype으로 갖는다 
+        function Dog(name, age) {
+            //type이 object타입 (자료형)
+            this.name =name;
+            this.age =age;
+        }
+
+        Dog.prototype.family ="시베리안허스키"
+
+        //Dog이라는 생성자 함수를 prototype으로 갖는다
+        let myDog =new Dog("마루", 1);
+        myDog. family
+
+        let yourDog =new dog
+        console.dir(myDog);
+        
+    </script>
+</body>
+</html>

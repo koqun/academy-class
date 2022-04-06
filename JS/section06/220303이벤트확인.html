@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload =function(){
+            //window객체가 load가 되면 아래내용 실행
+            const p =document.querySelector("p");
+            p.textContent ="수정했습니다";
+        }
+    </script>
+</head>
+<body>
+    <p onclick="alert('문자열을 클릭했습니다')">단락입니다</p>
+    <p id="color" onmouseover="color()"onmouseleave="color2()">마우스를 올리면 색이 바뀝니다</p>
+
+    <h1 id="title">제목입니다</h1>
+    
+    <input type="text" id="intxt" value="">
+    <input type="submit" value="확인" id="insub" onclick="document.innerHTML(body,'insub')">
+
+    <script>
+        //이벤트 리스너를 사용할 때 마다 DOM 객체를 먼저 불러와서 사용
+        const h1=document.querySelector("h1");
+        h1.addEventListener("click", color);
+        h1.addEventListener("dbclick", color2);
+
+        function color(){
+            const p =document.querySelector("#color")
+            p.style.color ="red";
+        }
+        function color2(){
+            const p =document.querySelector("#color")
+            p.style.color ="black";
+        }
+
+        function focusIn(){
+            const h1 =document.querySelector("#title");
+            h1.textContent ="포커스"
+        }
+
+        //요소의 속성으로 등록하는 방법
+
+    </script>
+</body>
+</html>

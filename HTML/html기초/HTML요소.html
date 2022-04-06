@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"
+        <title>Document</title>
+        <style>
+            p{background-color:yellowgreen;}
+            table, tr, td{border:2px solid black;}
+            tr{border:2px solid pink;}
+            td{border:2px solid purple;}
+            th{border:2px solid yellow;}
+        </style>
+        <!--스타일 태그는 헤드에 넣어서 원하는 위치에 
+            일괄적으로 디자인을 줄수있다.-->
+    </head>
+    <body>
+        <h3><a name="page_up"></a>스타일태그 확인</h3>
+        <p style="color:blue">스타일태그가 적용된 태그입니다</p>
+        <p style="color: #8f8ada;">색상값으로 적용된 태그입니다</p>
+        <p style="background-color: rgb(46, 197, 207); border: 2px solid black">배경과 테두리입니다</p>
+
+        <h3>링크</h3>
+        <a href="텍스트 확인.html"> 텍스트 확인으로 넘어갑니다</a><br>
+        <!--a href:hypertext reference의 약자-->
+
+        <a href="https://www.naver.com/" target="_blank">
+        <img src="../img/naver.png" alt="네이버"
+        title="절대경로를 이용해서 이미지 들고오기"><br>
+        </a>
+        <!--target="_blank":새 탭으로 링크 열기-->
+        
+        <a href="https://www.daum.net/" target="_blank">
+        <img src="../img/daum.png" alt="다음"
+        title=".(현재경로)를 이용한 상대경로로 이미지 들고오기">
+        </a>
+        
+        <a href="#page_up">
+            맨위로 올라가기
+        </a><br>
+
+        <h3>리스트 태그</h3>
+            <ul style="list-style-type: style type circle;">
+                <li>순서가 없는 리스트</li>
+                <li>순서가 없는 리스트</li>
+                <li>순서가 없는 리스트</li>
+            </ul>
+
+            <ol style="list-style-type: lower-greek">
+                <li>순서가 있는 리스트</li>
+                <li>순서가 있는 리스트</li>
+                <li>순서가 있는 리스트</li>
+            </ol>
+
+            <dl>
+                <dt style="font-weight: bold;"><b>정의(正義)</b></dt>
+                <dd>1.	진리에 맞는 올바른 도리.
+                    자유와 정의와 진리.<br>
+                    2.	바른 의의(意義).<br>
+                    3.	철학 개인 간의 올바른 도리. 
+                    또는 사회를 구성하고 유지하는 공정한 도리.
+                    분배 정의.<br>
+                    4.	철학 플라톤의 철학에서,
+                    지혜ㆍ용기ㆍ절제의 완전한 조화를 이르는 말.</dd>
+            </dl>
+
+        <h3>테이블 작성</h3>
+        <table>
+            <tr>
+                <td rowspan="3">자기자신과
+                    아래 셀 2개를 차지한다</td>
+                    <td>rowspan을 사용한 첫번째 tr</th>
+            </tr>
+
+            <tr title="row(열)를 작성한다">
+                <td>홍길동</td>
+                <td>부산</td>
+                <td>하나의 셀이 생깁니다</td>
+            </tr>
+
+            <tr>
+                <td colspan="3">셀을 합치고 싶을때</td>
+            </tr>
+            <!--<td colspan="합칠 셀의 개수"> 내용 </td>
+                <th colspan="합칠 셀의 개수"> 내용 </th>-->
+
+            <tr>
+                <td>1칸차지</td>
+                <td colspan="2">2칸차지</td>
+                <!--앞에 1칸차지하는 td가있으니 2,3의 셀을 차지-->
+            </tr>
+
+        </table>
+
+
+    </body>
+</html>

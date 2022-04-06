@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        .blue_style {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h3 v-bind:class="sColor+'_style'">Vue bind</h3>
+        <input type="text" :value="sDate">
+        <p>{{sTime}}</p>
+
+        <h2>v-bind 실습</h2>
+        <p>{{name+"입니다"}}</p>
+        <p>{{1-30}}</p>
+        <input type="checkbox" :checked="checked">
+        <img src="" alt="" :src="image">
+    </div>
+
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                sDate : "현재 년도 : "+new Data().getFullYear(),
+                sColor : "blue", //컬러이름을 바꿔서 확인
+                sTime : `${new Date().getHours()}:${new Date().getMinutes()}`,
+                disable : true,
+                name : "bird",
+                checked : true,
+                image : "https://cdn.pixabay.com/photo/2020/03/09/17/51/narcis-4916584_960_720.jpg"
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML5에서 추가된 input 속성</h1>
+    <form action="서버측파일.html" autocomplete="off" id="form1" method="post">
+        <!--텍스트 작성 후 엔터누르면 서버로 값전송-->
+        <input type="text" name="name" value="텍스트 박스에 적힐 값"> 인풋태그 옆에 적힐 값
+        <br>
+        <input type="text" name="af" autofocus>
+        <br>
+        <!--자동으로 텍스트 박스 활성화. 키보드만 누르면 바로 값 들어감-->
+
+        <input list="food" name="food"> list option 속성
+        <br>
+            <datalist id="food">
+                <option value="한식"></option>
+                <option value="양식"></option>
+                <option value="중식"></option>
+                <option value="일식"></option>
+            </datalist>
+
+        <input type="file" value="파일" multiple>
+        <br>
+        <!--multiple 사용시 파일 여러개 불러오기가능-->
+        
+        <input type="text" pattern="[a-z]">
+        <br>
+        <!--패턴에 들어가는 문자의 반복, 규칙-->
+        <!--현재 확인 어려우므로 javascript 배울때 알려줌-->
+
+        <input type="text" placeholder="placeholder 기능구현">
+        <br>
+        <!--placeholder는 value 값이 아닌 사용자에게만 보이는 텍스트-->
+
+        <input type="text" required>
+        <br>
+        <!--값이 없을 경우 전달되지 않음-->
+
+        <input type="number" step="2">
+        <br>
+
+
+        <input type="submit" value="버튼" formaction="다른서버측파일.html" formenctype="application/x-www-form-urlencoded">
+        <br>
+        <!--submit타입은 form 속성을 이용하여
+        인코딩을 바꾸거나 서버측 파일을 바꿀수있음
+        차후에 서버 배울때 다시 확인-->
+
+        <input type="image" src="../img/naver.png" alt="전송" height="100" width="200">
+        <br>
+        <!--image속성을 이용하여 이미지버튼을 만들수있음
+        alt는 이미지가 안보였을때 텍스트표시
+        scr는 파일 위치지정(<strong>../</strong> 사용시 상위폴더이동가능)-->
+        
+    </form>
+
+    <input type="text" name="form" form="form1">
+
+</body>
+</html>

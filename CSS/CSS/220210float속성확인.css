@@ -1,0 +1,17 @@
+.float_left{
+    width: 30%;
+    background-color: blanchedalmond;
+    float: left;
+}
+.color_box{
+    border: 3px solid black;
+    float: right;
+}
+p{
+    clear: both;
+}
+/*clear-float 영향무시
+양쪽공간 비우기 ?*/
+.test{
+    text-align: center;
+}

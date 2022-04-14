@@ -59,8 +59,8 @@ export default {
             // 상품의 종류 - 배열안에 색, 이미지, 재고 
             // 1. 상품의 종류 추가해보기
             variants : [
-                {color : 'white', image :"@/assets/mask_white.jpg", stock :10},
-                {color : 'black', image :"@/assets/mask_black.jpg", stock : 0}
+                {color : 'white', image : require './assets/mask_white.jpg', stock :10},
+                {color : 'black', image : require './assets/mask_black.jpg', stock : 0}
             ],
             // 선택한 상품
             selction : 0,

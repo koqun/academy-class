@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>test</p>
+</body>
+
+
+<script src="./nameprint.js"></script>
+
+<!-- export를 통해 모듈로 만들어 들고올때는 type에 module 명시 -->
+<script type="module">
+    // import를 이용하여 들고옴
+    // import 할때 동일한 이름으로 가져와야함
+    // 여러개 export 할때 구분
+    import { namePrintModule } from './namePrintModule.js'
+
+    const name = "홍길동";
+
+    // 모듈로 들고온 함수
+    namePrintModule(name);
+    // 모듈에서 함께 export하지 않은 값은 들고올 수 없다
+
+    // 자바스크립트로 들고온 함수
+    nameprint(name);
+    // 어디에서도 쓸수있다
+</script>
+</html>

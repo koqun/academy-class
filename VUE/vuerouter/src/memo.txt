@@ -1,0 +1,13 @@
+$기호
+vue 객체의 속성에 접근할 때 사용
+
+$ref
+특정 Dom
+
+$router 속성
+app.use(router)에 엑세스 할 수 있다.
+:router인스턴스
+
+push - url 이동. 히스토리 스택에 추가되므로 뒤로가기 버튼 동작시 이전 url로 이동
+replace - url 이동. 현재 url을 대체하기 때문에 히스토리 스택 쌓지않음
+go - 숫자만큼 뒤로가기 또는 앞으로 가기 음수backward 양수foward??

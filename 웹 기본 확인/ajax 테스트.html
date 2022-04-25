@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btnjson">btnjson</button>
+</body>
+
+<script>
+    ///json 데이터 들고오기
+    const btnjson = document.querySelector('#btnjson');
+    const printjson = document.querySelector('printjson');
+
+    btnjson.addEventListener('click', function(){
+        const btnjsonreq = new XMLHttpRequest();
+        btnjsonreq.onreadystatechange = function a(){
+            if(this.readyState == 4 && this.status == 200){
+                printtext.innerHTML = this.response;
+                // json 형식으로 들고와도 string값으로 출력된다
+                // string 형식은 객체 형식으로 출력할 수 없다
+                console.log(typeof(this.response));
+                // json.parse를 통해서 자바스크립트 객체로 들고올수 있다
+                const data = JSON.parse(this.response);
+                console.log(typeof(data));
+                // json.parse를 통해서 만들어준 객체에 접근하여 속성사용
+                printjson.innerHTML = data.memo;
+            }
+        }
+        btnjsonreq.open("GET", './data.json');
+        btnjsonreq.send();
+    })
+</script>
+</html>

@@ -14,6 +14,7 @@ export default {
         this.$http.get(`/api/memo/${this.$route.params.id}`)
         .then((response)=> {
             this.memo= response.data;
+            console.log(this.memo)
         })
     },
     data() {

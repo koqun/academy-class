@@ -37,6 +37,7 @@ export default {
             }).then((response)=>{
                 console.log(response.data)
             });
+            // MemoList.vue(Home)으로 이동
             this.$router.push('/')
         }
     }

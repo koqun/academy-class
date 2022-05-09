@@ -15,11 +15,18 @@
         </v-list-item>
       </v-list>
       <!-- 로그인이 된 경우에만 로그아웃 버튼을 표시함 -->
-      <v-list-item v-if="login">
+      <v-list-item @click="fnDoLogout" v-if="fnGetAuthStatus">
         <v-list-item-action>
           <v-icon>mdi-arrow-right-bold-box-outline</v-icon>
         </v-list-item-action>
           <v-list-item-title>로그아웃</v-list-item-title>
+      </v-list-item>
+      <!-- 로그인이 된 경우에만 회원탈퇴 버튼을 표시함 -->
+      <v-list-item @click="fnDoDelete" v-if="fnGetAuthStatus">
+        <v-list-item-action>
+          <v-icon>mdi-arrow-right-bold-box</v-icon>
+        </v-list-item-action>
+          <v-list-item-title>회원탈퇴</v-list-item-title>
       </v-list-item>
     </v-navigation-drawer>
 
@@ -47,6 +54,11 @@
         <v-btn @click="fnDoLogout" text v-if="fnGetAuthStatus">
           <v-icon left>mdi-arrow-right-bold-box-outline</v-icon>
           로그아웃
+        </v-btn>
+        <!-- 로그인 된 경우에만 회원탈퇴 버튼을 표시 -->
+        <v-btn @click="fnDoDelete" text v-if="fnGetAuthStatus">
+          <v-icon left>mdi-arrow-right-bold-box</v-icon>
+          회원탈퇴
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
@@ -95,6 +107,9 @@ export default {
   methods: {
     fnDoLogout(){
       this.$store.dispatch("fnDoLogout");
+    },
+    fnDoDelete(){
+      this.$store.dispatch("fnDoDelete")
     }
   },
 }

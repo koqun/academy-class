@@ -8,14 +8,22 @@
         <v-row>
             <v-col cols="8" class="text-center">
                 <form @submit.prevent="fnDoLogin">
-                    <v-text-field name="email" label="이메일" type="email" required></v-text-field>
-                    <v-text-field name="password" label="비밀번호" type="password" required></v-text-field>
-                    <v-btn type="submit" color="orange" dark v-if="!loading">로그인</v-btn>
+                    <v-text-field name="email" label="이메일" type="email" 
+                    required  v-model="sEmail"></v-text-field>
+                    <v-text-field name="password" label="비밀번호" type="password" 
+                    required v-model="sPassword"></v-text-field>
+                    <v-btn type="submit" color="orange" dark v-if="!fnGetLoading">로그인</v-btn>
 
-                    <v-progress-circular v-if="loading"
+                    <!-- 시간지연의 경우 회전 프로그레스 원 표시 -->
+                    <v-progress-circular v-if="fnGetLoading"
                     color="grey lighten-1" :width="7" :size="70" 
                     indeterminate>
                     </v-progress-circular>
+
+                    <!-- 오류메시지가 있을 경우 표시 -->
+                    <v-alert class="mt-3" type="error" dismissible v-model="bAlert">
+                        {{fnGetErrMsg}}
+                    </v-alert>
                 </form>
             </v-col>
         </v-row>
@@ -26,9 +34,9 @@
 export default {
     data() {
         return {
-            loading:false,
-            sEmail:"",
-            sPassword:""
+            sEmail: "",
+            sPassword: "",
+            bAlert: false
         }
     },
     methods: {
@@ -37,6 +45,24 @@ export default {
                 pEmail: this.sEmail,
                 pPassword: this.sPassword
             })
+        }
+    },
+    computed: {
+        fnGetLoading(){
+            return this.$store.getters.fnGetLoading
+        },
+        fnGetErrMsg(){
+            return this.$store.getters.fnSetErrorMessage;
+        }
+    },
+    watch: {
+        // fnGetErrMsg의 값이 있으면 true로 바뀜
+        fnGetErrMsg(pMsg){
+            if(pMsg) this.bAlert= true;
+        },
+        // pValue값이 false면 오류 메세지의 값 초기화
+        bAlert(pValue){
+            if(pValue == false) this.$store.commit("fnSetErrorMessage", "");
         }
     }
 }

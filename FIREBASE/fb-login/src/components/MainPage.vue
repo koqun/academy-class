@@ -26,12 +26,26 @@
 </template>
 
 <script>
+import { oFirebaseAuth } from '@/datasources/firebase'
+
 export default {
     computed:{
         fnGetUser(){
             let oUserInfo = this.$store.getters.fnGetUser
             return oUserInfo
         }
-    }
+    },
+    methods: {
+        fnSendPasswordReset(){
+            // 비밀번호 재설정 메일 발송하기
+            oFirebaseAuth.sendPasswordResetEmail(this.fnGetUser.email)
+            .then(()=> {
+                console.log("비밀번호 재설정 메일을 발송하였습니다")
+            })
+            .catch((err)=> {
+                console.log(err);
+            })
+        }
+    },
 }
 </script>

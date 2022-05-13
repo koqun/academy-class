@@ -1,0 +1,43 @@
+변수 (let, const, var)
+
+//
+매개변수: 함수 선언할 때 값이 들어올 공간을 미리 만들어준 변수
+function add(a, b){
+  return a+b;
+}
+//
+
+//
+인수: 함수를 사용할 때 전달해주는 값
+let num = 4
+let sum = add(1, num)
+//
+
+//
+자바스크립트 객체: 관련 데이터와 함수(메서드)의 묶음
+let user = {      //객체
+  name: "john",   //키: "name", 값: "john"
+  age: 30         //키: "age", 값: "30"
+}
+//
+
+//
+함수(생성자-프로토타입)를 이용한 자바스크립트 객체 생성
+function User(name, age) {
+  this.name = name;
+  this.age = age;
+} 
+
+let user2 = new User('Jane', 30);
+//
+
+//
+클래스란 ? 함수의 한 유형이지만 function 대신 class 키워드를 사용
+//
+
+//
+클래스의 getter와 setter
+
+get과 set을 이용해서 getter와 setter 만들기
+
+_element < 보호된 내부속성
